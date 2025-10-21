@@ -18,7 +18,7 @@
 
 // --- PLEASE REPLACE WITH YOUR ACTUAL CREDENTIALS ---
 // --- OR USE A CONFIG FILE AS RECOMMENDED ABOVE ---
-define('DB_SERVER', '3.228.233.221'); // Replace with your server IP or hostname
+define('DB_SERVER', 'localhost:3306'); // Replace with your server IP or hostname
 define('DB_USERNAME', 'Quranapp');      // Replace with your database username
 define('DB_PASSWORD', 'Quran@123');      // Replace with your database password
 define('DB_NAME', 'Quranapp');          // Replace with your database name
