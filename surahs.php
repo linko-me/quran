@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
 include 'includes/api.php';
 $meta = call_api('meta');
 $surahs = $meta['data']['surahs']['references'];
@@ -22,7 +18,12 @@ $surahs = $meta['data']['surahs']['references'];
                 <ul>
                     <li><a href="surahs.php">Surahs</a></li>
                     <li><a href="juzs.php">Juzs</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
@@ -45,7 +46,7 @@ $surahs = $meta['data']['surahs']['references'];
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Quran App</p>
+            <p>&copy; 2024 Quran App</p>
         </div>
     </footer>
 </body>
