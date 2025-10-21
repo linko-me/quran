@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
 include 'includes/api.php';
 $meta = call_api('meta');
 $juzs = $meta['data']['juzs']['references'];
@@ -22,7 +18,12 @@ $juzs = $meta['data']['juzs']['references'];
                 <ul>
                     <li><a href="surahs.php">Surahs</a></li>
                     <li><a href="juzs.php">Juzs</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
@@ -32,9 +33,9 @@ $juzs = $meta['data']['juzs']['references'];
         <div class="container">
             <h2>All Juzs</h2>
             <div class="card-container">
-                <?php foreach ($juzs as $juz): ?>
+                <?php foreach ($juzs as $juz_number): ?>
                     <div class="card">
-                        <h3><a href="juz_viewer.php?juz=<?php echo $juz['juz']; ?>">Juz <?php echo $juz['juz']; ?></a></h3>
+                        <h3><a href="juz_viewer.php?juz=<?php echo $juz_number; ?>">Juz <?php echo $juz_number; ?></a></h3>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -43,7 +44,7 @@ $juzs = $meta['data']['juzs']['references'];
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Quran App</p>
+            <p>&copy; 2024 Quran App</p>
         </div>
     </footer>
 </body>

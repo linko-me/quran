@@ -18,28 +18,41 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $username;
             header("Location: index.php");
         } else {
-            echo "Invalid password";
+            $error = "Invalid password";
         }
     } else {
-        echo "No user found";
+        $error = "No user found";
     }
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Quran App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <form action="login.php" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login">Login</button>
-        </form>
-        <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
+    <div class="auth-page">
+        <div class="auth-container">
+            <h2>Login to Your Account</h2>
+            <?php if (isset($error)): ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <form action="login.php" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" name="login" class="btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
+        </div>
     </div>
 </body>
 </html>

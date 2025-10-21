@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
 include 'includes/api.php';
 
 if (isset($_GET['sura'])) {
@@ -29,7 +25,12 @@ if (isset($_GET['sura'])) {
                 <ul>
                     <li><a href="surahs.php">Surahs</a></li>
                     <li><a href="juzs.php">Juzs</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <li><a href="logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>
@@ -41,7 +42,7 @@ if (isset($_GET['sura'])) {
             <div class="ayah-container">
                 <?php foreach ($ayahs as $ayah): ?>
                     <div class="ayah-card">
-                        <p class="ayah-text"><?php echo $ayah['text']; ?></p>
+                        <p class="ayah-text" dir="rtl"><?php echo $ayah['text']; ?></p>
                         <p class="ayah-number"><?php echo $ayah['numberInSurah']; ?></p>
                     </div>
                 <?php endforeach; ?>
@@ -51,7 +52,7 @@ if (isset($_GET['sura'])) {
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Quran App</p>
+            <p>&copy; 2024 Quran App</p>
         </div>
     </footer>
 </body>
