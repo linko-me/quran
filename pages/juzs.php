@@ -11,9 +11,10 @@ $juzs = range(1, 30);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juzs - Quran App</title>
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Quran.app</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,14 +30,14 @@ $juzs = range(1, 30);
                     </li>
                     <?php if (isset($_SESSION['username'])): ?>
                         <li class="nav-item">
-                            <a href="/logout" class="btn btn-danger">Logout</a>
+                            <a href="/logout" class="btn btn-outline-light">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a href="/login" class="btn btn-primary">Login</a>
+                            <a href="/login" class="btn btn-outline-light me-2">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/signup" class="btn btn-secondary ms-2">Sign Up</a>
+                            <a href="/signup" class="btn btn-primary">Sign Up</a>
                         </li>
                     <?php endif; ?>
                 </ul>
