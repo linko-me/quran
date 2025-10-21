@@ -16,12 +16,11 @@
  * require_once 'config.php';
  */
 
-// --- PLEASE REPLACE WITH YOUR ACTUAL CREDENTIALS ---
-// --- OR USE A CONFIG FILE AS RECOMMENDED ABOVE ---
-define('DB_SERVER', 'localhost:3306'); // Replace with your server IP or hostname
-define('DB_USERNAME', 'Quranapp');      // Replace with your database username
-define('DB_PASSWORD', 'Quran@123');      // Replace with your database password
-define('DB_NAME', 'Quranapp');          // Replace with your database name
+// --- Database credentials should be set as environment variables for security ---
+define('DB_SERVER', getenv('DB_SERVER') ?: 'localhost:3306');
+define('DB_USERNAME', getenv('DB_USERNAME') ?: 'db_user');
+define('DB_PASSWORD', getenv('DB_PASSWORD') ?: 'db_password');
+define('DB_NAME', getenv('DB_NAME') ?: 'db_name');
 
 // Create connection
 $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
