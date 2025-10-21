@@ -32,10 +32,11 @@ if (isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Quran App</title>
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body class="bg-light">
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card shadow" style="width: 22rem;">
+        <div class="card shadow auth-card" style="width: 22rem;">
             <div class="card-body">
                 <h2 class="card-title text-center mb-4">Login</h2>
                 <?php if (isset($error)): ?>
