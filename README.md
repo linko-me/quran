@@ -1,4 +1,5 @@
-I want to create a Quran web app using the https://alquran.cloud/api.
+I want to create a full stack Quran web app using the https://alquran.cloud/api with PHP.
+A complete web app with frontend and backend with user authentication system.
 I want to create the quran with these APIs from https://alquran.cloud/api
 Juz - Get a Juz of the Quran
 Surah - Get a Surah of the Quran
