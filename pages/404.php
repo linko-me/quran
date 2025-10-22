@@ -10,7 +10,7 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/">Quran.app</a>
+            <a class="navbar-brand" href="/">Quran Kareem</a>
         </div>
     </nav>
     <div class="container text-center py-5">

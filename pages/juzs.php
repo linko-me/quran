@@ -9,14 +9,14 @@ $juzs = range(1, 30);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juzs - Quran App</title>
+    <title>Juzs - Quran Kareem</title>
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Quran.app</a>
+            <a class="navbar-brand" href="/">Quran Kareem</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,7 +64,7 @@ $juzs = range(1, 30);
 
     <footer class="bg-light text-center text-lg-start mt-auto">
         <div class="text-center p-3">
-            &copy; 2024 Quran App
+            &copy; 2024 Quran Kareem
         </div>
     </footer>
 
