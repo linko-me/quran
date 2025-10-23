@@ -1,0 +1,35 @@
+:root {
+  --text-color: #73737B;
+  --text-light:#888888;
+  --heading :#101621;
+  --blue-dark:#63c59b;
+  --red-light:#e04848;
+  --yellow-deep:#fcee70;
+  --blue-light:#4050bc;
+  --purple-blue:#655C97;
+  --vin-red:#973C56;
+}
+
+.fancy-feature-ten .bg-wrapper {
+    background-image: url(../images/islamic_pattern.svg);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.fancy-feature-ten .bg-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: -1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
